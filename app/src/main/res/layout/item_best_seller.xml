@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/margin_8"
+    android:layout_marginHorizontal="@dimen/margin_4"
+    android:layout_marginVertical="@dimen/margin_6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_fab_favourites_border"
+        app:borderWidth="0dp"
+        app:fabCustomSize="24dp"
+        app:maxImageSize="14dp"
+        app:tint="@color/orange" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="165dp"
+            tools:tint="@color/black"
+            tools:src="@drawable/ic_qr_code_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="$1,047" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:textColor="@color/discount_price_text"
+                android:textSize="11sp"
+                tools:text="$1,500" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:textSize="11sp"
+            tools:text="Samsung Galaxy s20 Ultra" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
