@@ -22,4 +22,14 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/dark_blue</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="CategoryItemUnselected" parent="Theme.SergeyBalakinTestTask">
+        <item name="android:background">@drawable/round_shape_white</item>
+        <item name="tint">@color/category_item_unselected</item>
+    </style>
+
+    <style name="CategoryItemSelected" parent="Theme.SergeyBalakinTestTask">
+        <item name="android:background">@drawable/round_shape_orange</item>
+        <item name="tint">@color/category_item_selected</item>
+    </style>
 </resources>

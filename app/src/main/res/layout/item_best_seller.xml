@@ -2,17 +2,21 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="@dimen/margin_8"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/margin_4"
     android:layout_marginVertical="@dimen/margin_6"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    app:cardCornerRadius="@dimen/margin_8"
+    app:cardElevation="0dp"
+    app:layout_constraintCircleRadius="8dp">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favouriteButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_gravity="end"
         android:backgroundTint="@color/white"
+        android:clickable="false"
         android:src="@drawable/ic_fab_favourites_border"
         app:borderWidth="0dp"
         app:fabCustomSize="24dp"
@@ -26,40 +30,49 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/bestSellerImageView"
             android:layout_width="180dp"
             android:layout_height="165dp"
-            tools:tint="@color/black"
-            tools:src="@drawable/ic_qr_code_icon" />
+            tools:src="@drawable/ic_qr_code_icon"
+            tools:tint="@color/black" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/margin_4"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_4"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/priceWithoutDiscountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:text="$1,047" />
 
             <TextView
+                android:id="@+id/priceWithDiscountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8"
                 android:textColor="@color/discount_price_text"
                 android:textSize="11sp"
+                android:textStyle="bold"
                 tools:text="$1,500" />
 
         </LinearLayout>
 
         <TextView
-            android:layout_marginTop="@dimen/margin_4"
+            android:id="@+id/titleBestSellerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:ellipsize="end"
+            android:gravity="center"
             android:textSize="11sp"
             tools:text="Samsung Galaxy s20 Ultra" />
 

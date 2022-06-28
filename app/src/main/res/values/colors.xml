@@ -11,4 +11,6 @@
     <color name="dark_blue">#010035</color>
     <color name="background">#E5E5E5</color>
     <color name="discount_price_text">#CCCCCC</color>
+    <color name="category_item_unselected">#B3B3C3</color>
+    <color name="category_item_selected">@color/white</color>
 </resources>

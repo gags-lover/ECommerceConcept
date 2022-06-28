@@ -10,4 +10,9 @@
     <string name="see_more">see more</string>
     <string name="new_string">New</string>
     <string name="best_seller">Best Seller</string>
+    <string name="computer">Computer</string>
+    <string name="phone">Phone</string>
+    <string name="health">Health</string>
+    <string name="books">Books</string>
+    <string name="unknown">Unknown</string>
 </resources>
