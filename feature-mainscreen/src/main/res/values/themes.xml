@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+<!--    <style name="Theme.SergeyBalakinTestTask" parent="Theme.MaterialComponents.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Primary brand color. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/orange</item>-->
+<!--        <item name="colorPrimaryVariant">@color/dark_blue</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+<!--&lt;!&ndash;        <item name="android:background">@color/background</item>&ndash;&gt;-->
+<!--        <item name="fontFamily">@font/mark_pro</item>-->
+<!--        <item name="colorAccent">@color/white</item>-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="colorSecondary">@color/teal_200</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="colorSecondaryVariant">@color/teal_700</item>&ndash;&gt;-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+<!--&lt;!&ndash;        <item name="windowActionBar">false</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:windowNoTitle">true</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:windowTranslucentStatus">true</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:windowTranslucentNavigation">true</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:fitsSystemWindows">true</item>&ndash;&gt;-->
+<!--        &lt;!&ndash; Status bar color. &ndash;&gt;-->
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/dark_blue</item>-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--    </style>-->
+
+    <style name="CategoryItemUnselected" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:background">@drawable/round_shape_white</item>
+        <item name="tint">@color/category_item_unselected</item>
+    </style>
+
+    <style name="CategoryItemSelected" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:background">@drawable/round_shape_orange</item>
+        <item name="tint">@color/category_item_selected</item>
+    </style>
+</resources>

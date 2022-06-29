@@ -9,11 +9,10 @@
         android:name="com.github.astat1cc.sergeybalakintesttask.SplashFragment"
         android:label="SplashFragment" >
         <action
-            android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_splashFragment_to_mainscreen_nav_graph"
+            app:destination="@id/mainscreen_nav_graph" />
     </fragment>
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.MainFragment"
-        android:label="MainFragment" />
+
+    <include app:graph="@navigation/mainscreen_nav_graph" />
+
 </navigation>

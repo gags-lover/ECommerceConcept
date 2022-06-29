@@ -12,6 +12,7 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/ic_fab_favourites.xml" value="0.254" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/ic_fab_in_favourites.xml" value="0.254" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/ic_geo.xml" value="0.196" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/round_edit_text_shape.xml" value="0.254" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/round_shape.xml" value="0.254" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/drawable/round_shape_transparent.xml" value="0.254" />
@@ -27,6 +28,8 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/layout/item_best_seller.xml" value="0.33" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/layout/item_hot_sale.xml" value="0.21944444444444444" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/layout/old_constraint.xml" value="0.365625" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_categories.xml" value="0.33" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/fragment_main.xml" value="0.32592592592592595" />
       </map>
     </option>
   </component>

@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "SergeyBalakinTestTask"
 include ':app'
+include ':core'
+include ':feature-detailsscreen'
+include ':feature-mainscreen'
+include ':feature-cartscreen'
