@@ -1,4 +1,4 @@
-package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.recyclerview
+package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.recyclerview
 
 import android.graphics.Paint
 import android.view.LayoutInflater

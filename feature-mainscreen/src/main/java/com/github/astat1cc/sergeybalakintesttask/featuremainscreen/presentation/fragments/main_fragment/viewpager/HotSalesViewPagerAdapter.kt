@@ -1,11 +1,10 @@
-package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.viewpager
+package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.viewpager
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.databinding.ItemHotSaleBinding
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HomeStore
 

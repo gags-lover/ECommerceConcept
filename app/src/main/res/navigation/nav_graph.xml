@@ -21,7 +21,7 @@
         android:label="MainFragment" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.CartFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.CartFragment"
         android:label="CartFragment" />
 
     <!--    <include app:graph="@navigation/mainscreen_nav_graph">-->

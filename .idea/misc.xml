@@ -28,6 +28,12 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/layout/item_best_seller.xml" value="0.33" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/layout/item_hot_sale.xml" value="0.21944444444444444" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/app/src/main/res/layout/old_constraint.xml" value="0.365625" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/back_button_shape.xml" value="0.244" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/cart_background_shape.xml" value="0.196" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/geo_button_shape.xml" value="0.244" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/rounded_dark_grey_shape.xml" value="0.196" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/layout/fragment_cart.xml" value="0.22" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/layout/item_cart_item_layout.xml" value="0.33" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/drawable/bottom_nav_shape.xml" value="0.196" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/drawable/close_button_shape.xml" value="0.196" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/drawable/done_button_shape.xml" value="0.196" />
