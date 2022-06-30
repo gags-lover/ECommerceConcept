@@ -32,7 +32,7 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/cart_background_shape.xml" value="0.196" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/geo_button_shape.xml" value="0.244" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/drawable/rounded_dark_grey_shape.xml" value="0.196" />
-        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/layout/fragment_cart.xml" value="0.22" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/layout/fragment_cart.xml" value="0.37525987525987525" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-cartscreen/src/main/res/layout/item_cart_item_layout.xml" value="0.33" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/drawable/bottom_nav_shape.xml" value="0.196" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/drawable/close_button_shape.xml" value="0.196" />
@@ -47,6 +47,7 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_best_seller_recyclerview.xml" value="0.22" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_categories.xml" value="0.33" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_hot_sales_viewpager.xml" value="0.32592592592592595" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_search.xml" value="0.18802083333333333" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/fragment_main.xml" value="0.2" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/item_best_seller.xml" value="0.16712962962962963" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/item_hot_sale.xml" value="0.25" />
