@@ -51,4 +51,20 @@ dependencies {
     def glide_version = "4.13.0"
 
     implementation "com.github.bumptech.glide:glide:$glide_version"
+
+    def koin_version= "3.2.0"
+
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    def retrofit_version = "2.9.0"
+    def interceptor_version = "4.10.0"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
+
+    def coroutines_version = "1.6.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 }

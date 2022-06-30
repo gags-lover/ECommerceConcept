@@ -6,13 +6,29 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.SplashFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.presentation.SplashFragment"
         android:label="SplashFragment" >
         <action
-            android:id="@+id/action_splashFragment_to_mainscreen_nav_graph"
-            app:destination="@id/mainscreen_nav_graph" />
+            android:id="@+id/action_splashFragment_to_mainFragment2"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/mainFragment" />
     </fragment>
 
-    <include app:graph="@navigation/mainscreen_nav_graph" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.CartFragment"
+        android:label="CartFragment" />
+
+    <!--    <include app:graph="@navigation/mainscreen_nav_graph">-->
+<!--        <action-->
+<!--            android:id="@+id/action_mainScreen_to_CartScreen"-->
+<!--            app:destination="@id/cart_nav_graph" />-->
+<!--    </include>-->
+<!--    <include app:graph="@navigation/cart_nav_graph" />-->
 
 </navigation>

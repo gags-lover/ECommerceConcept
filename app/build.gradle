@@ -46,6 +46,7 @@ dependencies {
 
     implementation project(":feature-mainscreen")
     implementation project(":core")
+    implementation project(":feature-cartscreen")
 
     def nav_version = "2.4.2"
 

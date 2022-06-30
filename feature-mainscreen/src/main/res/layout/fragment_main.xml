@@ -74,9 +74,4 @@
         android:paddingHorizontal="@dimen/margin_16"
         android:layout_height="0dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:background="@drawable/search_shape"
-        android:layout_height="48dp" />
-
 </LinearLayout>
