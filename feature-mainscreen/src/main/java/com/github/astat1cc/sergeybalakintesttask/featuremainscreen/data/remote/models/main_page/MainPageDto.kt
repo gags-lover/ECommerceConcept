@@ -9,5 +9,5 @@ data class MainPageDto(
 
     fun mapToDomain() = MainPage(
         bestSeller = best_seller.map { it.mapToDomain() },
-        homeStore = home_store.map { it.mapToDomain() })
+        hotSale = home_store.map { it.mapToDomain() })
 }

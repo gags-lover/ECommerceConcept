@@ -1,6 +1,6 @@
 package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.models.main_page
 
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HomeStore
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
 
 data class HomeStoreDto(
     val id: Int,
@@ -11,7 +11,7 @@ data class HomeStoreDto(
     val title: String
 ) {
 
-    fun mapToDomain() = HomeStore(
+    fun mapToDomain() = HotSale(
         id = id,
         isBuy = is_buy,
         isNew = is_new,

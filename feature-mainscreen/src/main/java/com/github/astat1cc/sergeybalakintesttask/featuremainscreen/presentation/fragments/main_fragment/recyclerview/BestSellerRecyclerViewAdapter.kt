@@ -10,7 +10,8 @@ import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.databinding.I
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
 
 class BestSellerRecyclerViewAdapter(
-    private val bestSellers: List<BestSeller>
+    private val bestSellers: List<BestSeller>,
+    private val itemClickListener: (BestSeller) -> Unit
 ) : RecyclerView.Adapter<BestSellerRecyclerViewAdapter.BestSellerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerViewHolder {
@@ -22,8 +23,12 @@ class BestSellerRecyclerViewAdapter(
     override fun onBindViewHolder(holder: BestSellerViewHolder, position: Int) {
         val item = bestSellers[position]
         with(holder.binding) {
+            itemCardViewWithoutFavouriteButton.setOnClickListener { itemClickListener(item) }
             Glide.with(bestSellerImageView).load(item.picture).into(bestSellerImageView)
             titleBestSellerTextView.text = item.title
+            priceWithDiscountTextView.text = item.discountPrice.toPriceFormat()
+            priceWithDiscountTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            priceWithoutDiscountTextView.text = item.priceWithoutDiscount.toPriceFormat()
             favouriteButton.setImageResource(
                 if (item.isFavorites) {
                     R.drawable.ic_fab_favorites
@@ -31,9 +36,7 @@ class BestSellerRecyclerViewAdapter(
                     R.drawable.ic_fab_favourites_border
                 }
             )
-            priceWithDiscountTextView.text = item.discountPrice.toPriceFormat()
-            priceWithDiscountTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-            priceWithoutDiscountTextView.text = item.priceWithoutDiscount.toPriceFormat()
+            favouriteButton.setOnClickListener { }
         }
     }
 

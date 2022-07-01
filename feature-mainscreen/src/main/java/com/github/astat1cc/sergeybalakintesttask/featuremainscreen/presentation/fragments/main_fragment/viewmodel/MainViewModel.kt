@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HomeStore
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.usecases.GetCartUseCase
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.usecases.GetMainPageUseCase
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.DelegateAdapterItem
@@ -41,7 +41,7 @@ class MainViewModel(
     val sizes: LiveData<List<String>> = _sizes
 
     private var bestSeller: List<BestSeller> = emptyList()
-    private var homeStore: List<HomeStore> = emptyList()
+    private var hotSale: List<HotSale> = emptyList()
     private var selectedBrand = ""
     private var previouslySelectedBrand = ""
 
@@ -61,33 +61,33 @@ class MainViewModel(
     }
 
     private fun submitUiItemsList() {
-        val selectCategorySectionItem = SectionItem(
+        val selectCategorySectionDelegateItem = SectionDelegateItem(
             "Select Category",
             "view all"
         )
-        val hotSalesSectionItem = SectionItem(
+        val hotSalesSectionDelegateItem = SectionDelegateItem(
             "Hot sales",
             "see more"
         )
-        val bestSellerSectionItem = SectionItem(
+        val bestSellerSectionDelegateItem = SectionDelegateItem(
             "Best Seller",
             "see more"
         )
-        val categoriesItem = CategoriesItem()
-        val searchItem = SearchItem()
+        val categoriesDelegateItem = CategoriesDelegateItem()
+        val searchDelegateItem = SearchDelegateItem()
         uiItemsFlow = flow {
             while (true) {
-                val hotSalesItem = HotSalesItem(homeStore)
-                val bestSellerItem = BestSellerItem(bestSeller)
+                val hotSalesDelegateItem = HotSalesDelegateItem(hotSale)
+                val bestSellerDelegateItem = BestSellerDelegateItem(bestSeller)
                 emit(
                     listOf(
-                        selectCategorySectionItem,
-                        categoriesItem,
-                        searchItem,
-                        hotSalesSectionItem,
-                        hotSalesItem,
-                        bestSellerSectionItem,
-                        bestSellerItem
+                        selectCategorySectionDelegateItem,
+                        categoriesDelegateItem,
+                        searchDelegateItem,
+                        hotSalesSectionDelegateItem,
+                        hotSalesDelegateItem,
+                        bestSellerSectionDelegateItem,
+                        bestSellerDelegateItem
                     )
                 )
                 delay(500L)
@@ -98,7 +98,7 @@ class MainViewModel(
     private fun getMainPage() {
         viewModelScope.launch(dispatcherIo) {
             val mainPage = getMainPageUseCase.execute()
-            homeStore = mainPage.homeStore
+            hotSale = mainPage.hotSale
             bestSeller = mainPage.bestSeller
             getFilterOptions()
         }
@@ -109,7 +109,7 @@ class MainViewModel(
             val bestSellerBrands = bestSeller.map {
                 it.extractBrand()
             }
-            val homeStoreBrands = homeStore.map {
+            val homeStoreBrands = hotSale.map {
                 it.extractBrand()
             }
             val brands = (bestSellerBrands + homeStoreBrands).distinct()
@@ -118,7 +118,7 @@ class MainViewModel(
         }
     }
 
-    private fun HomeStore.extractBrand() =
+    private fun HotSale.extractBrand() =
         title.split(" ").first()
 
     private fun BestSeller.extractBrand() =

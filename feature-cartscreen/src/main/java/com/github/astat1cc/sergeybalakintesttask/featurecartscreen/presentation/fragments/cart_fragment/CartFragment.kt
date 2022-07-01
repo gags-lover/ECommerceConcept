@@ -1,10 +1,14 @@
 package com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.databinding.FragmentCartBinding
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.recyclerview.CartItemsAdapter

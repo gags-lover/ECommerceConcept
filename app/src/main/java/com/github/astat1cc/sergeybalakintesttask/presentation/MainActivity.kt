@@ -1,15 +1,12 @@
 package com.github.astat1cc.sergeybalakintesttask.presentation
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.github.astat1cc.sergeybalakintesttask.R
 import com.github.astat1cc.sergeybalakintesttask.databinding.ActivityMainBinding
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        navController.addOnDestinationChangedListener { controller, destination, bundle ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bottomNavBar.visibility = if (destination.id == R.id.mainFragment) {
                 View.VISIBLE
             } else {

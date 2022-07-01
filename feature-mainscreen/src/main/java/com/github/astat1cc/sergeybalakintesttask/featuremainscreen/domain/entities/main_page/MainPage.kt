@@ -2,5 +2,5 @@ package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entit
 
 data class MainPage(
     val bestSeller: List<BestSeller>,
-    val homeStore: List<HomeStore>
+    val hotSale: List<HotSale>
 )

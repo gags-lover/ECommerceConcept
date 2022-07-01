@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.databinding.ItemHotSaleBinding
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HomeStore
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
 
 class HotSalesViewPagerAdapter(
-    private val hotSales: List<HomeStore>
+    private val hotSales: List<HotSale>,
+    private val itemClickListener: (HotSale) -> Unit
 ) : RecyclerView.Adapter<HotSalesViewPagerAdapter.HotSaleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotSaleViewHolder {
@@ -21,6 +22,7 @@ class HotSalesViewPagerAdapter(
     override fun onBindViewHolder(holder: HotSaleViewHolder, position: Int) {
         val item = hotSales[position]
         with(holder.binding) {
+            holder.itemView.setOnClickListener { itemClickListener(item) }
             Glide.with(hotSaleImageView)
                 .load(item.picture)
                 .override(600, 400)

@@ -8,10 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.github.astat1cc.sergeybalakintesttask.R
 import com.github.astat1cc.sergeybalakintesttask.databinding.FragmentSplashBinding
+import com.github.astat1cc.sergeybalakintesttask.navigation.R.id.action_splash_to_mainscreen
 
 class SplashFragment : Fragment() {
 
@@ -30,14 +29,7 @@ class SplashFragment : Fragment() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (view.isVisible) {
-//                val navOptions =
-//                    NavOptions.Builder().setPopUpTo(R.id.mainFragment, true, true).build()
-//                findNavController().navigate(
-//                    R.id.mainFragment,
-//                    savedInstanceState,
-//                    navOptions
-//                )
-                findNavController().navigate(R.id.action_splashFragment_to_mainFragment2)
+                findNavController().navigate(action_splash_to_mainscreen)
             }
         }, 1500)
     }
