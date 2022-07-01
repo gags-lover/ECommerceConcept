@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.DetailsFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.DetailsFragment"
         android:label="DetailsFragment">
 
         <argument

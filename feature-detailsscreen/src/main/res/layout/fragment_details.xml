@@ -30,6 +30,7 @@
                 app:tint="@color/white" />
 
             <ImageView
+                android:id="@+id/cartImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="end|center"
@@ -80,12 +81,12 @@
                 android:layout_marginEnd="36dp"
                 android:background="@drawable/back_button_shape"
                 android:scaleType="center"
-                app:tint="@color/white"
-                tools:src="@drawable/ic_favorite" />
+                app:tint="@color/white" />
 
         </LinearLayout>
 
         <RatingBar
+            android:id="@+id/ratingBar"
             style="@android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="44dp"
@@ -126,6 +127,7 @@
                     app:tint="@color/grey" />
 
                 <TextView
+                    android:id="@+id/cpuTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -149,6 +151,7 @@
                     app:tint="@color/grey" />
 
                 <TextView
+                    android:id="@+id/cameraTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -172,6 +175,7 @@
                     app:tint="@color/grey" />
 
                 <TextView
+                    android:id="@+id/ramTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -195,6 +199,7 @@
                     app:tint="@color/grey" />
 
                 <TextView
+                    android:id="@+id/sdTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -222,12 +227,12 @@
             android:orientation="horizontal">
 
             <GridLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="14dp"
-                android:layout_weight="1"
-                android:columnCount="3">
+                android:minWidth="140dp"
+                android:columnCount="2">
 
                 <ImageView
                     android:id="@+id/firstColorImageView"
@@ -286,6 +291,7 @@
                     android:paddingVertical="8dp"
                     android:textColor="@color/white"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     tools:text="128 GB" />
 
                 <TextView
@@ -300,6 +306,7 @@
                     android:paddingVertical="8dp"
                     android:textColor="@color/dark_grey"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     android:visibility="gone"
                     tools:text="256 GB" />
 
@@ -315,6 +322,7 @@
                     android:paddingVertical="8dp"
                     android:textColor="@color/dark_grey"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     android:visibility="gone"
                     tools:text="128 GB" />
 
