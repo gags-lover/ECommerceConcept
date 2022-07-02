@@ -1,15 +1,13 @@
 package com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
-import androidx.navigation.NavDeepLinkRequest
-import androidx.navigation.fragment.findNavController
+import android.widget.FrameLayout
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.databinding.FragmentCartBinding
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.recyclerview.CartItemsAdapter
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.viewmodel.CartViewModel
@@ -40,10 +38,13 @@ class CartFragment : Fragment() {
 
     private fun observe() {
         with(viewModel) {
+            uiState.observe(viewLifecycleOwner) {
+                updateUiState(it)
+            }
             cartItems.observe(viewLifecycleOwner) {
                 if (it.isEmpty()) {
-                    binding.progressBar.visibility = View.VISIBLE
-                    binding.recyclerView.visibility = View.GONE
+//                    binding.progressBar.visibility = View.VISIBLE
+//                    binding.recyclerView.visibility = View.GONE
                 } else {
                     binding.progressBar.visibility = View.GONE
                     binding.recyclerView.visibility = View.VISIBLE
@@ -55,6 +56,39 @@ class CartFragment : Fragment() {
             }
             delivery.observe(viewLifecycleOwner) {
                 binding.deliveryTextView.text = it
+            }
+        }
+    }
+
+    private fun updateUiState(state: UiState) {
+        when (state) {
+            is UiState.Success -> with(binding) {
+                successStateUi.visibility = View.VISIBLE
+                errorStateUi.visibility = View.GONE
+                progressBar.visibility = View.GONE
+                recyclerView.visibility = View.VISIBLE
+            }
+            is UiState.Error -> with(binding) {
+                successStateUi.visibility = View.GONE
+                errorStateUi.visibility = View.VISIBLE
+                setTryAgainButtonClickListener()
+            }
+            is UiState.Loading -> with(binding) {
+                successStateUi.visibility = View.VISIBLE
+                progressBar.visibility = View.VISIBLE
+                recyclerView.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun setTryAgainButtonClickListener() {
+        view?.let {
+            it.findViewById<FrameLayout>(
+                com.github.astat1cc.sergeybalakintesttask.core.R.id.tryAgainFrame
+            )?.let { tryAgainTextView ->
+                tryAgainTextView.setOnClickListener {
+                    viewModel.retryNetworkCall()
+                }
             }
         }
     }

@@ -39,15 +39,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
-            android:maxLines="2"
             android:gravity="center"
             android:lineSpacingExtra="2dp"
             android:maxWidth="110dp"
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"
-            app:autoSizeMinTextSize="8sp"
-            app:autoSizeTextType="uniform"
             tools:text="Iphone 12" />
 
         <TextView
@@ -55,12 +52,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_4"
-            android:lines="1"
             android:maxWidth="110dp"
             android:textColor="@color/white"
             android:textSize="11sp"
-            app:autoSizeMinTextSize="8sp"
-            app:autoSizeTextType="uniform"
             tools:text="Iphone 12" />
 
         <Button

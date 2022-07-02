@@ -24,12 +24,14 @@ class SplashFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onStart() {
+        super.onStart()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (view.isVisible) {
-                findNavController().navigate(action_splash_to_mainscreen)
+            view?.let {
+                if (it.isVisible) {
+                    findNavController().navigate(action_splash_to_mainscreen)
+                }
             }
         }, 1500)
     }

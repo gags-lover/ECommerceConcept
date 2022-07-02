@@ -36,7 +36,7 @@ class BestSellerRecyclerViewAdapter(
                     R.drawable.ic_fab_favourites_border
                 }
             )
-            favouriteButton.setOnClickListener { }
+            favouriteButtonFrame.setOnClickListener { }
         }
     }
 

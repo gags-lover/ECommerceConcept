@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.github.astat1cc.sergeybalakintesttask.core.utils.NetworkResult
+import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.usecases.GetCartUseCase
@@ -11,9 +13,12 @@ import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.usecas
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.DelegateAdapterItem
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.adapters.CategoryItemTag
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.items.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
 import java.util.*
 
 class MainViewModel(
@@ -23,8 +28,9 @@ class MainViewModel(
     private val dispatcherDefault: CoroutineDispatcher = Dispatchers.Default
 ) : ViewModel() {
 
+    private val _uiState = MutableLiveData<UiState>()
+
     private val _mainPageItems: MutableLiveData<List<DelegateAdapterItem>> = MutableLiveData()
-    val mainPageItems: LiveData<List<DelegateAdapterItem>> = _mainPageItems
 
     private lateinit var uiItemsFlow: Flow<List<DelegateAdapterItem>>
 
@@ -34,7 +40,11 @@ class MainViewModel(
     private val _prices = MutableLiveData<List<String>>(listOf("$0 - $10000"))
     private val _sizes = MutableLiveData<List<String>>(listOf("4.5 to 5.5 inches"))
 
-    val cartSize: LiveData<Int> = _cartSize //todo
+    val uiState: LiveData<UiState> = _uiState
+
+    val mainPageItems: LiveData<List<DelegateAdapterItem>> = _mainPageItems
+
+    val cartSize: LiveData<Int> = _cartSize
     val selectedCategoryTag: LiveData<CategoryItemTag> = _selectedCategoryTag
     val brands: LiveData<List<String>> = _brands
     val prices: LiveData<List<String>> = _prices
@@ -50,6 +60,11 @@ class MainViewModel(
         getCart()
         submitUiItemsList()
         collectItems()
+    }
+
+    fun retryNetworkCall() {
+        getMainPage()
+        getCart()
     }
 
     private fun collectItems() {
@@ -97,10 +112,15 @@ class MainViewModel(
 
     private fun getMainPage() {
         viewModelScope.launch(dispatcherIo) {
-            val mainPage = getMainPageUseCase.execute()
-            hotSale = mainPage.hotSale
-            bestSeller = mainPage.bestSeller
-            getFilterOptions()
+            val mainPageCallResult = getMainPageUseCase.execute()
+            if (mainPageCallResult is NetworkResult.Success) {
+                hotSale = mainPageCallResult.data.hotSale
+                bestSeller = mainPageCallResult.data.bestSeller
+                getFilterOptions()
+                _uiState.postValue(UiState.Success)
+            } else {
+                _uiState.postValue(UiState.Error)
+            }
         }
     }
 
@@ -126,8 +146,10 @@ class MainViewModel(
 
     private fun getCart() {
         viewModelScope.launch(dispatcherIo) {
-            val cart = getCartUseCase.execute()
-            _cartSize.postValue(cart.itemsCount)
+            val cartCallResult = getCartUseCase.execute()
+            if (cartCallResult is NetworkResult.Success) {
+                _cartSize.postValue(cartCallResult.data.itemsCount)
+            }
         }
     }
 

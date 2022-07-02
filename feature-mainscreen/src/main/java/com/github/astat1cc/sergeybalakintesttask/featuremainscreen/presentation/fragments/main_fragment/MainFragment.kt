@@ -1,11 +1,14 @@
 package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.R
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.databinding.FragmentMainBinding
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
@@ -121,22 +124,23 @@ class MainFragment : Fragment() {
         onItemSelectedListener = createFilterSpinnerOnItemSelectedListener()
     }
 
-    private fun createFilterSpinnerOnItemSelectedListener() = object : AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(
-            adapterView: AdapterView<*>?,
-            v: View?,
-            position: Int,
-            id: Long
-        ) {
-            when (adapterView?.tag) {
-                FilterCategory.BRAND -> brandSelected(brandsFilterItems[position])
-                FilterCategory.PRICE -> {}
-                FilterCategory.SIZE -> {}
+    private fun createFilterSpinnerOnItemSelectedListener() =
+        object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                adapterView: AdapterView<*>?,
+                v: View?,
+                position: Int,
+                id: Long
+            ) {
+                when (adapterView?.tag) {
+                    FilterCategory.BRAND -> brandSelected(brandsFilterItems[position])
+                    FilterCategory.PRICE -> {}
+                    FilterCategory.SIZE -> {}
+                }
             }
-        }
 
-        override fun onNothingSelected(p0: AdapterView<*>?) {}
-    }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
+        }
 
     private fun brandSelected(brand: String) {
         viewModel.setSelectedBrand(brand)
@@ -161,6 +165,9 @@ class MainFragment : Fragment() {
 
     private fun observe() {
         with(viewModel) {
+            uiState.observe(viewLifecycleOwner) {
+                updateUiState(it)
+            }
             mainPageItems.observe(viewLifecycleOwner) {
                 compositeAdapter.submitList(it)
             }
@@ -178,6 +185,33 @@ class MainFragment : Fragment() {
             }
             cartSize.observe(viewLifecycleOwner) {
                 binding.bottomCartCountTextView.text = it.toString()
+            }
+        }
+    }
+
+    private fun updateUiState(state: UiState) {
+        when (state) {
+            is UiState.Success -> with(binding) {
+                successStateUi.visibility = View.VISIBLE
+                errorStateUi.visibility = View.GONE
+            }
+            is UiState.Error -> with(binding) {
+                successStateUi.visibility = View.GONE
+                errorStateUi.visibility = View.VISIBLE
+                setTryAgainButtonClickListener()
+            }
+            is UiState.Loading -> {}
+        }
+    }
+
+    private fun setTryAgainButtonClickListener() {
+        view?.let {
+            it.findViewById<FrameLayout>(
+                com.github.astat1cc.sergeybalakintesttask.core.R.id.tryAgainFrame
+            )?.let { tryAgainTextView ->
+                tryAgainTextView.setOnClickListener {
+                    viewModel.retryNetworkCall()
+                }
             }
         }
     }

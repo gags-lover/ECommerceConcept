@@ -20,9 +20,6 @@
         android:id="@+id/cartFragment"
         android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.CartFragment"
         android:label="CartFragment">
-        <!--        <action-->
-        <!--            android:id="@+id/action_cartFragment2_to_detailsFragment"-->
-        <!--            app:destination="@id/detailsFragment" />-->
     </fragment>
 
     <fragment
@@ -39,9 +36,6 @@
         android:id="@+id/mainFragment"
         android:name="com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.MainFragment"
         android:label="MainFragment">
-        <!--        <action-->
-        <!--            android:id="@+id/action_mainFragment_to_detailsFragment"-->
-        <!--            app:destination="@id/detailsFragment" />-->
     </fragment>
 
     <action

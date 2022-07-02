@@ -2,7 +2,6 @@ package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote
 
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.models.cart.CartDto
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.models.main_page.MainPageDto
-import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 
 interface MainScreenService {
