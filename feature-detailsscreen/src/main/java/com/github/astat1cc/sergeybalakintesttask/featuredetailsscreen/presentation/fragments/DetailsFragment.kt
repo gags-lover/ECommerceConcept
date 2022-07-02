@@ -139,21 +139,25 @@ class DetailsFragment : Fragment() {
                     R.drawable.ic_favorite_border
                 }
             )
-            handleColorAndCapacity(details)
+            setProductColors(details)
+            setProductCapacity(details)
         }
     }
 
-    private fun handleColorAndCapacity(details: ProductDetails) {
-        details.color.forEachIndexed { i, color ->
-            with(colorImageViews[i]) {
-                makeVisible()
-                backgroundTintList = ColorStateList.valueOf(Color.parseColor(color))
-            }
-        }
+    private fun setProductCapacity(details: ProductDetails) {
         details.capacity.forEachIndexed { i, capacity ->
             with(capacityTextViews[i]) {
                 makeVisible()
                 text = "$capacity GB"
+            }
+        }
+    }
+
+    private fun setProductColors(details: ProductDetails) {
+        details.color.forEachIndexed { i, color ->
+            with(colorImageViews[i]) {
+                makeVisible()
+                backgroundTintList = ColorStateList.valueOf(Color.parseColor(color))
             }
         }
     }

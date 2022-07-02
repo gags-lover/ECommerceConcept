@@ -65,10 +65,20 @@ class MainFragment : Fragment() {
 
         observe()
         setupRecyclerView()
+        setOnClickListeners()
+    }
 
-        binding.filterImageView.setOnClickListener {
-            showFilter()
+    private fun setOnClickListeners() {
+        with(binding) {
+            filterImageView.setOnClickListener {
+                showFilter()
+            }
+            bottomCartImageView.setOnClickListener { openCart() }
         }
+    }
+
+    private fun openCart() {
+        findNavController().navigate(AppRoutes.CartScreen.Entry)
     }
 
     private fun openItemDetails() {
@@ -165,6 +175,9 @@ class MainFragment : Fragment() {
             }
             sizes.observe(viewLifecycleOwner) {
                 this@MainFragment.sizesFilterItems = it
+            }
+            cartSize.observe(viewLifecycleOwner) {
+                binding.bottomCartCountTextView.text = it.toString()
             }
         }
     }

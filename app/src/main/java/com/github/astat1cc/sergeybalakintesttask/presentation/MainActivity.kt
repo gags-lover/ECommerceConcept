@@ -17,18 +17,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-        val navController = navHostFragment.navController
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            binding.bottomNavBar.visibility = if (destination.id == R.id.mainFragment) {
-                View.VISIBLE
-            } else {
-                View.GONE
-            }
-        }
-
-        binding.bottomNavBar.setupWithNavController(navHostFragment.navController)
+//        val navHostFragment =
+//            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+//        val navController = navHostFragment.navController
+//
+//        navController.addOnDestinationChangedListener { _, destination, _ ->
+//            binding.bottomNavBar.visibility = if (destination.id == R.id.mainFragment) {
+//                View.VISIBLE
+//            } else {
+//                View.GONE
+//            }
+//        }
+//
+//        binding.bottomNavBar.setupWithNavController(navHostFragment.navController)
     }
 }
