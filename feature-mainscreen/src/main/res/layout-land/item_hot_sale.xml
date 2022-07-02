@@ -77,6 +77,6 @@
         android:layout_marginBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="@dimen/hot_sales_view_pager_height"
-        android:scaleType="center" />
+        android:scaleType="fitCenter" />
 
 </LinearLayout>

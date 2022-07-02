@@ -74,6 +74,7 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/drawable/spinner_background.xml" value="0.244" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout-land/delegate_item_best_seller_recyclerview.xml" value="0.25" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout-land/fragment_main.xml" value="0.4666666666666667" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout-land/item_hot_sale.xml" value="0.32522522522522523" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/bottom_sheet_dialog_filter.xml" value="0.33" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_best_seller_recyclerview.xml" value="0.22" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_categories.xml" value="0.33" />
@@ -82,7 +83,7 @@
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/delegate_item_section.xml" value="0.18802083333333333" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/fragment_main.xml" value="0.22" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/item_best_seller.xml" value="0.22" />
-        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/item_hot_sale.xml" value="0.5" />
+        <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/item_hot_sale.xml" value="0.25" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/layout/old_constraint.xml" value="0.18802083333333333" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/feature-mainscreen/src/main/res/menu/bottom_menu.xml" value="0.16620370370370371" />
         <entry key="..\:/Projects/SergeyBalakinTestTask/navigation/src/main/res/layout/fragment.xml" value="0.18802083333333333" />

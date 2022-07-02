@@ -25,12 +25,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.DetailsFragment"
-        android:label="DetailsFragment">
-
-        <argument
-            android:name="url_string"
-            app:argType="string" />
-    </fragment>
+        android:label="DetailsFragment"/>
 
     <fragment
         android:id="@+id/mainFragment"
