@@ -1,9 +1,6 @@
 package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.github.astat1cc.sergeybalakintesttask.core.utils.NetworkResult
 import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
@@ -30,9 +27,7 @@ class MainViewModel(
 
     private val _uiState = MutableLiveData<UiState>()
 
-    private val _mainPageItems: MutableLiveData<List<DelegateAdapterItem>> = MutableLiveData()
-
-    private lateinit var uiItemsFlow: Flow<List<DelegateAdapterItem>>
+    private lateinit var mainPageItemsFlow: Flow<List<DelegateAdapterItem>>
 
     private val _cartSize = MutableLiveData<Int>()
     private val _selectedCategoryTag = MutableLiveData<CategoryItemTag>(CategoryItemTag.PHONE)
@@ -42,7 +37,7 @@ class MainViewModel(
 
     val uiState: LiveData<UiState> = _uiState
 
-    val mainPageItems: LiveData<List<DelegateAdapterItem>> = _mainPageItems
+    val mainPageItems: LiveData<List<DelegateAdapterItem>> by lazy { mainPageItemsFlow.asLiveData() }
 
     val cartSize: LiveData<Int> = _cartSize
     val selectedCategoryTag: LiveData<CategoryItemTag> = _selectedCategoryTag
@@ -59,20 +54,11 @@ class MainViewModel(
         getMainPage()
         getCart()
         submitUiItemsList()
-        collectItems()
     }
 
     fun retryNetworkCall() {
         getMainPage()
         getCart()
-    }
-
-    private fun collectItems() {
-        viewModelScope.launch {
-            uiItemsFlow.collect {
-                _mainPageItems.postValue(it)
-            }
-        }
     }
 
     private fun submitUiItemsList() {
@@ -90,7 +76,7 @@ class MainViewModel(
         )
         val categoriesDelegateItem = CategoriesDelegateItem()
         val searchDelegateItem = SearchDelegateItem()
-        uiItemsFlow = flow {
+        mainPageItemsFlow = flow {
             while (true) {
                 val hotSalesDelegateItem = HotSalesDelegateItem(hotSale)
                 val bestSellerDelegateItem = BestSellerDelegateItem(bestSeller)
