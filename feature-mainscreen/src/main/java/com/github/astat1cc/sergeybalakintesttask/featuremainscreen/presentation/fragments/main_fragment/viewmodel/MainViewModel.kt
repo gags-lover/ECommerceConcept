@@ -27,7 +27,7 @@ class MainViewModel(
 
     private val _uiState = MutableLiveData<UiState>()
 
-    private lateinit var mainPageItemsFlow: Flow<List<DelegateAdapterItem>>
+    private lateinit var mainPageUiItemsFlow: Flow<List<DelegateAdapterItem>>
 
     private val _cartSize = MutableLiveData<Int>()
     private val _selectedCategoryTag = MutableLiveData<CategoryItemTag>(CategoryItemTag.PHONE)
@@ -37,7 +37,8 @@ class MainViewModel(
 
     val uiState: LiveData<UiState> = _uiState
 
-    val mainPageItems: LiveData<List<DelegateAdapterItem>> by lazy { mainPageItemsFlow.asLiveData() }
+    val mainPageUiItems: LiveData<List<DelegateAdapterItem>>
+        get() = mainPageUiItemsFlow.asLiveData()
 
     val cartSize: LiveData<Int> = _cartSize
     val selectedCategoryTag: LiveData<CategoryItemTag> = _selectedCategoryTag
@@ -53,7 +54,7 @@ class MainViewModel(
     init {
         getMainPage()
         getCart()
-        submitUiItemsList()
+        setupMainPageUiItems()
     }
 
     fun retryNetworkCall() {
@@ -61,7 +62,7 @@ class MainViewModel(
         getCart()
     }
 
-    private fun submitUiItemsList() {
+    private fun setupMainPageUiItems() {
         val selectCategorySectionDelegateItem = SectionDelegateItem(
             "Select Category",
             "view all"
@@ -76,7 +77,7 @@ class MainViewModel(
         )
         val categoriesDelegateItem = CategoriesDelegateItem()
         val searchDelegateItem = SearchDelegateItem()
-        mainPageItemsFlow = flow {
+        mainPageUiItemsFlow = flow {
             while (true) {
                 val hotSalesDelegateItem = HotSalesDelegateItem(hotSale)
                 val bestSellerDelegateItem = BestSellerDelegateItem(bestSeller)

@@ -73,9 +73,7 @@ class MainFragment : Fragment() {
 
     private fun setOnClickListeners() {
         with(binding) {
-            filterImageView.setOnClickListener {
-                showFilter()
-            }
+            filterImageView.setOnClickListener { showFilter() }
             bottomCartImageView.setOnClickListener { openCart() }
         }
     }
@@ -168,7 +166,7 @@ class MainFragment : Fragment() {
             uiState.observe(viewLifecycleOwner) {
                 updateUiState(it)
             }
-            mainPageItems.observe(viewLifecycleOwner) {
+            mainPageUiItems.observe(viewLifecycleOwner) {
                 compositeAdapter.submitList(it)
             }
             selectedCategoryTag.observe(viewLifecycleOwner) {
