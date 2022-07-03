@@ -184,7 +184,21 @@ class MainFragment : Fragment() {
                 this@MainFragment.sizesFilterItems = it
             }
             cartSize.observe(viewLifecycleOwner) {
-                binding.bottomCartCountTextView.text = it.toString()
+                setCartSize(it)
+            }
+        }
+    }
+
+    private fun setCartSize(size: Int) {
+        if (size > 0) {
+            with(binding.bottomCartCountTextView) {
+                text = size.toString()
+                visibility = View.VISIBLE
+            }
+        } else {
+            with(binding.bottomCartCountTextView) {
+                text = size.toString()
+                visibility = View.GONE
             }
         }
     }

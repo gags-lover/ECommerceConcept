@@ -121,13 +121,14 @@
                     <TextView
                         android:id="@+id/bottomCartCountTextView"
                         android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="end|bottom"
                         android:background="@drawable/round_shape_orange"
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="11sp"
                         android:textStyle="bold"
+                        android:visibility="gone"
                         tools:text="2" />
 
                 </FrameLayout>
