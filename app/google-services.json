@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "984739265333",
+    "project_id": "sergey-balakin-test-task",
+    "storage_bucket": "sergey-balakin-test-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984739265333:android:10bae7db57039201baaa7c",
+        "android_client_info": {
+          "package_name": "com.github.astat1cc.sergeybalakintesttask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984739265333-bpcvpl180pd5nc1br0ohcivp88ds1hj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.astat1cc.sergeybalakintesttask",
+            "certificate_hash": "00164ab00db85e4158bc591799e91f64f1d2a84e"
+          }
+        },
+        {
+          "client_id": "984739265333-eis7fbmnl6fom31es5bgofcnf63b90gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmsoS3B5fRxCxNpbBuExlAXlgAmG0vV6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984739265333-eis7fbmnl6fom31es5bgofcnf63b90gs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
