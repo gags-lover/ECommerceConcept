@@ -2,9 +2,9 @@ package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.
 
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.MainPage
 
-data class MainPageDto(
-    val best_seller: List<BestSellerDto>,
-    val home_store: List<HomeStoreDto>
+data class MainPageNetworkDto(
+    val best_seller: List<BestSellerNetworkDto>,
+    val home_store: List<HotSaleNetworkDto>
 ) {
 
     fun mapToDomain() = MainPage(

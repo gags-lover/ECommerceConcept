@@ -1,7 +1,8 @@
 package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.*
-import com.github.astat1cc.sergeybalakintesttask.core.utils.NetworkResult
+import com.github.astat1cc.sergeybalakintesttask.core.utils.FetchResult
 import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
@@ -100,7 +101,7 @@ class MainViewModel(
     private fun getMainPage() {
         viewModelScope.launch(dispatcherIo) {
             val mainPageCallResult = getMainPageUseCase.execute()
-            if (mainPageCallResult is NetworkResult.Success) {
+            if (mainPageCallResult is FetchResult.Success) {
                 hotSale = mainPageCallResult.data.hotSale
                 bestSeller = mainPageCallResult.data.bestSeller
                 getFilterOptions()
@@ -134,8 +135,10 @@ class MainViewModel(
     private fun getCart() {
         viewModelScope.launch(dispatcherIo) {
             val cartCallResult = getCartUseCase.execute()
-            if (cartCallResult is NetworkResult.Success) {
+            if (cartCallResult is FetchResult.Success) {
                 _cartSize.postValue(cartCallResult.data.itemsCount)
+            } else {
+                Log.e("cart", "error case")
             }
         }
     }

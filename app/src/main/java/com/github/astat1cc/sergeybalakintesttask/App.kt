@@ -1,10 +1,11 @@
 package com.github.astat1cc.sergeybalakintesttask
 
 import android.app.Application
-import com.github.astat1cc.sergeybalakintesttask.core.di.networkModule
+import com.github.astat1cc.sergeybalakintesttask.di.databaseModule
+import com.github.astat1cc.sergeybalakintesttask.di.networkModule
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.di.cartScreenModule
-import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.di.detailsScreenModule
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.di.mainScreenModule
+import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.di.detailsScreenModule
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.di.mainScreenModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -18,7 +19,13 @@ class App : Application() {
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@App)
-            modules(networkModule, mainScreenModule, cartScreenModule, detailsScreenModule)
+            modules(
+                networkModule,
+                mainScreenModule,
+                cartScreenModule,
+                detailsScreenModule,
+                databaseModule
+            )
         }
     }
 }

@@ -2,7 +2,7 @@ package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.
 
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
 
-data class BestSellerDto(
+data class BestSellerNetworkDto(
     val discount_price: Int,
     val id: Int,
     val is_favorites: Boolean,

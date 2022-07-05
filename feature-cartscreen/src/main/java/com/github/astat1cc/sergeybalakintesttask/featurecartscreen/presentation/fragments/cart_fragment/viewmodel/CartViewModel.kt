@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.github.astat1cc.sergeybalakintesttask.core.utils.NetworkResult
+import com.github.astat1cc.sergeybalakintesttask.core.utils.FetchResult
 import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.domain.entities.Basket
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.domain.usecases.GetCartUseCase
@@ -35,7 +35,7 @@ class CartViewModel(
         _uiState.postValue(UiState.Loading)
         viewModelScope.launch(dispatcherIo) {
             val cartCallResult = getCartUseCase.execute()
-            if (cartCallResult is NetworkResult.Success) {
+            if (cartCallResult is FetchResult.Success) {
                 _cartItems.postValue(cartCallResult.data.basket)
                 _total.postValue(cartCallResult.data.total)
                 _delivery.postValue(cartCallResult.data.delivery)

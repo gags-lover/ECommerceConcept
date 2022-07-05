@@ -14,7 +14,7 @@ val cartScreenModule = module {
         provideCartScreenService(retrofit = get())
     }
     single<CartScreenRepository> {
-        CartScreenRepositoryImpl(cartScreenService = get())
+        CartScreenRepositoryImpl(cartScreenService = get(), cartScreenDao = get())
     }
     factory {
         GetCartUseCase(get())

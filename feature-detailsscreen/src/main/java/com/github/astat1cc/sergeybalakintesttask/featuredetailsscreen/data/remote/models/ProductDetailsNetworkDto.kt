@@ -2,7 +2,7 @@ package com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.data.remo
 
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.domain.entities.ProductDetails
 
-data class ProductDetailsDto(
+data class ProductDetailsNetworkDto(
     val CPU: String,
     val camera: String,
     val capacity: List<String>,

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.github.astat1cc.sergeybalakintesttask.core.utils.NetworkResult
+import com.github.astat1cc.sergeybalakintesttask.core.utils.FetchResult
 import com.github.astat1cc.sergeybalakintesttask.core.utils.UiState
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.domain.entities.ProductDetails
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.domain.usecases.GetProductDetailsUseCase
@@ -30,7 +30,7 @@ class DetailsViewModel(
     private fun getDetails() {
         viewModelScope.launch(dispatcherIo) {
             val productDetailsCallResult = getProductDetailsUseCase.execute()
-            if (productDetailsCallResult is NetworkResult.Success) {
+            if (productDetailsCallResult is FetchResult.Success) {
                 _productDetails.postValue(productDetailsCallResult.data)
                 _uiState.postValue(UiState.Success)
             } else {

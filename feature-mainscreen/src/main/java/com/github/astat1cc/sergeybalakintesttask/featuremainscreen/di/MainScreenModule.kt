@@ -1,4 +1,4 @@
-package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.di
+package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.di
 
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.MainScreenService
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.repository.MainScreenRepositoryImpl
@@ -15,7 +15,7 @@ val mainScreenModule = module {
         provideMainScreenService(retrofit = get())
     }
     single<MainScreenRepository> {
-        MainScreenRepositoryImpl(mainScreenService = get())
+        MainScreenRepositoryImpl(mainScreenService = get(), mainScreenDao = get())
     }
     factory {
         GetMainPageUseCase(get())

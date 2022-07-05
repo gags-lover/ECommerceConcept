@@ -2,7 +2,7 @@ package com.github.astat1cc.sergeybalakintesttask.featurecartscreen.data.remote.
 
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.domain.entities.Basket
 
-data class BasketDto(
+data class BasketNetworkDto(
     val id: Int,
     val images: String,
     val price: Int,

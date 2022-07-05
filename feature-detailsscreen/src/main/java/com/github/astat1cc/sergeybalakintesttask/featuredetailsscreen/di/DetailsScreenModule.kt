@@ -1,4 +1,4 @@
-package com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.di
+package com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.di
 
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.data.remote.DetailsScreenService
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.data.repository.DetailsScreenRepositoryImpl
@@ -14,7 +14,7 @@ val detailsScreenModule = module {
         provideDetailsScreenService(retrofit = get())
     }
     single<DetailsScreenRepository> {
-        DetailsScreenRepositoryImpl(detailsScreenService = get())
+        DetailsScreenRepositoryImpl(detailsScreenService = get(), detailsScreenDao = get())
     }
     factory {
         GetProductDetailsUseCase(get())

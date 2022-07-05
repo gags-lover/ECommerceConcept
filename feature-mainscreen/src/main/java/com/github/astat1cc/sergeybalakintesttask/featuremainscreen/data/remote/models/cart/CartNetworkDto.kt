@@ -2,10 +2,9 @@ package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.
 
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.cart.Cart
 
-data class CartDto(
-    val id: String,
-    val basket: List<Basket>
+data class CartNetworkDto(
+    val basket: List<BasketNetworkDto>
 ) {
 
-    fun mapToDomain() = Cart(id = id, itemsCount = basket.size)
+    fun mapToDomain() = Cart(itemsCount = basket.size)
 }

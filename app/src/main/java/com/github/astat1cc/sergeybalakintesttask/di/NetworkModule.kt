@@ -1,4 +1,4 @@
-package com.github.astat1cc.sergeybalakintesttask.core.di
+package com.github.astat1cc.sergeybalakintesttask.di
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

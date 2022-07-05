@@ -2,7 +2,7 @@ package com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.remote.
 
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
 
-data class HomeStoreDto(
+data class HotSaleNetworkDto(
     val id: Int,
     val is_buy: Boolean,
     val is_new: Boolean,
