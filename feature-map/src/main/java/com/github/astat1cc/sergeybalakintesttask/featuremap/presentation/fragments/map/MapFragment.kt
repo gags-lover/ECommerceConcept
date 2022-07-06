@@ -23,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import java.util.*
 import kotlin.math.cos
@@ -35,6 +36,7 @@ class MapFragment : Fragment() {
 
     private lateinit var googleMap: GoogleMap
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private var userPositionMarker: Marker? = null
 
     private val requestLocationPermissionsLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -78,10 +80,10 @@ class MapFragment : Fragment() {
         val moscow = LatLng(55.739283, 37.624476)
         val randomPositions = getRandomPositionsAround(moscow, radiusInKilometers = 1000L)
         randomPositions.forEach { position ->
-            val marker = MarkerOptions().position(position).title("Random pin").icon(
+            val markerOptions  = MarkerOptions().position(position).title("Random pin").icon(
                 BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
             )
-            googleMap.addMarker(marker)
+            googleMap.addMarker(markerOptions)
         }
     }
 
@@ -121,12 +123,13 @@ class MapFragment : Fragment() {
 
     private fun moveCameraToUserPosition(location: Location?) {
         location?.let {
+            userPositionMarker?.remove()
             val position = LatLng(location.latitude, location.longitude)
             val cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, MAP_CAMERA_ZOOM)
-            val marker = MarkerOptions().position(position).title("Your position").icon(
+            val markerOptions = MarkerOptions().position(position).title("Your position").icon(
                 BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
             )
-            googleMap.addMarker(marker)
+            userPositionMarker = googleMap.addMarker(markerOptions)
             googleMap.animateCamera(cameraUpdate)
         }
     }
