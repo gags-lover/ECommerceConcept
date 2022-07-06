@@ -9,6 +9,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -115,6 +116,7 @@ class MapFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     private fun showUserPosition() {
+        Log.e("location", "show invoked")
         fusedLocationProviderClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, null)
             .addOnSuccessListener { location ->
                 moveCameraToUserPosition(location)
@@ -205,7 +207,7 @@ class MapFragment : Fragment() {
 
     companion object {
 
-        private const val MAP_CAMERA_ZOOM = 15f
+        private const val MAP_CAMERA_ZOOM = 16f
 
         private val LOCATION_PERMISSIONS = arrayOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
