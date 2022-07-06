@@ -3,7 +3,7 @@ package com.github.astat1cc.sergeybalakintesttask
 import android.app.Application
 import com.github.astat1cc.sergeybalakintesttask.di.databaseModule
 import com.github.astat1cc.sergeybalakintesttask.di.networkModule
-import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.di.cartScreenModule
+import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.di.cartScreenModule
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.di.detailsScreenModule
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.di.mainScreenModule
 import org.koin.android.ext.koin.androidContext

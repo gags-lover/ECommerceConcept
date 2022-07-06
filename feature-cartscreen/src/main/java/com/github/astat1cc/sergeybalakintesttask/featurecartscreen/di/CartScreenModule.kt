@@ -1,4 +1,4 @@
-package com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.di
+package com.github.astat1cc.sergeybalakintesttask.featurecartscreen.di
 
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.data.remote.CartScreenService
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.data.repository.CartScreenRepositoryImpl

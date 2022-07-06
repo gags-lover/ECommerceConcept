@@ -20,17 +20,36 @@
         android:id="@+id/cartFragment"
         android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.CartFragment"
         android:label="CartFragment">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="http://www.mysite.com/cart" />
+        <deepLink
+            android:id="@+id/deepLink5"
+            app:uri="http://mysite.com/cart" />
     </fragment>
 
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.DetailsFragment"
-        android:label="DetailsFragment"/>
+        android:label="DetailsFragment">
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="http://www.mysite.com/details" />
+        <deepLink
+            android:id="@+id/deepLink4"
+            app:uri="http://mysite.com/details" />
+    </fragment>
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.MainFragment"
         android:label="MainFragment">
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="http://www.mysite.com/home" />
+        <deepLink
+            android:id="@+id/deepLink6"
+            app:uri="http://mysite.com/home" />
     </fragment>
 
     <action
