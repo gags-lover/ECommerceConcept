@@ -8,7 +8,7 @@ import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.databinding.D
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.BestSeller
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.DelegateAdapter
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.items.BestSellerDelegateItem
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.recyclerview.BestSellerRecyclerViewAdapter
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main.recyclerview.BestSellerRecyclerViewAdapter
 
 class BestSellerDelegateAdapter(private val bestSellerItemClickListener: (BestSeller) -> Unit) :
     DelegateAdapter<BestSellerDelegateItem, BestSellerDelegateAdapter.BestSellerViewHolder>(

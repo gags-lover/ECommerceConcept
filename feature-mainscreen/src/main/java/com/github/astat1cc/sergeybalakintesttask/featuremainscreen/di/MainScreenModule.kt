@@ -5,7 +5,7 @@ import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.data.reposito
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.repository.MainScreenRepository
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.usecases.GetCartUseCase
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.usecases.GetMainPageUseCase
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.viewmodel.MainViewModel
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main.viewmodel.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

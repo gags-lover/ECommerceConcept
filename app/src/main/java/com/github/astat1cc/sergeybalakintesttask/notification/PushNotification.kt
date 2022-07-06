@@ -19,5 +19,5 @@ class PushNotification : FirebaseMessagingService() {
     }
 }
 
-const val FIREBASE_NOTIFICATION_ACTION_KEY = "FIREBASE_NOTIFICATION_ACTION_KEY"
+const val FIREBASE_NOTIFICATION_ACTION_KEY = "action"
 const val FIREBASE_ACTION_OPEN_CART = "OPEN_CART"

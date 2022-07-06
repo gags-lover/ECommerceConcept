@@ -20,19 +20,6 @@ class SearchDelegateAdapter:
 
     inner class SearchViewHolder(
         val binding: DelegateItemSearchBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-
-//        fun bind(item: CategoriesDelegateItem) {
-//
-//        }
-
-//        fun bindDepartureTime(departureTime: String) {
-//            //..
-//        }
-//
-//        fun bindArrivalTime(arrivalTime: String) {
-//            //..
-//        }
-    }
+    ) : RecyclerView.ViewHolder(binding.root)
 }
 

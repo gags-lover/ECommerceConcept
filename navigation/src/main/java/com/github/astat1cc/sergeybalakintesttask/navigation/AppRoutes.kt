@@ -9,4 +9,8 @@ object AppRoutes {
     object CartScreen {
         val Entry = R.id.cartFragment
     }
+
+    object MapScreen {
+        val Entry = R.id.mapFragment
+    }
 }

@@ -30,13 +30,5 @@ class SectionDelegateAdapter :
                 moreTextView.text = item.moreButtonText
             }
         }
-
-//        fun bindDepartureTime(departureTime: String) {
-//            //..
-//        }
-//
-//        fun bindArrivalTime(arrivalTime: String) {
-//            //..
-//        }
     }
 }

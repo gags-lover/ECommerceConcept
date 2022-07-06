@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.CartFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart.CartFragment"
         android:label="CartFragment">
         <deepLink
             android:id="@+id/deepLink"
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.DetailsFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.details.DetailsFragment"
         android:label="DetailsFragment">
         <deepLink
             android:id="@+id/deepLink3"
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.MainFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main.MainFragment"
         android:label="MainFragment">
         <deepLink
             android:id="@+id/deepLink2"
@@ -52,8 +52,17 @@
             app:uri="http://mysite.com/home" />
     </fragment>
 
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.github.astat1cc.sergeybalakintesttask.featuremap.presentation.fragments.map.MapFragment"
+        android:label="MapFragment" />
+
     <action
         android:id="@+id/actionDetailsFragment"
         app:destination="@id/detailsFragment" />
+
+    <action
+        android:id="@+id/actionMapFragment"
+        app:destination="@id/mapFragment" />
 
 </navigation>

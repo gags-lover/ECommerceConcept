@@ -4,7 +4,7 @@ import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.data.remote.C
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.data.repository.CartScreenRepositoryImpl
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.domain.repository.CartScreenRepository
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.domain.usecases.GetCartUseCase
-import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart_fragment.viewmodel.CartViewModel
+import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.presentation.fragments.cart.viewmodel.CartViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

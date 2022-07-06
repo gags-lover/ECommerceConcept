@@ -8,7 +8,7 @@ import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.databinding.D
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.domain.entities.main_page.HotSale
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.DelegateAdapter
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.adapters.delegate_adapter.items.HotSalesDelegateItem
-import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main_fragment.viewpager.HotSalesViewPagerAdapter
+import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.presentation.fragments.main.viewpager.HotSalesViewPagerAdapter
 
 class HotSalesDelegateAdapter(
     private val hotSalesItemClickListener: (HotSale) -> Unit

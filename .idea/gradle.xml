@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/feature-cartscreen" />
             <option value="$PROJECT_DIR$/feature-detailsscreen" />
             <option value="$PROJECT_DIR$/feature-mainscreen" />
+            <option value="$PROJECT_DIR$/feature-map" />
             <option value="$PROJECT_DIR$/navigation" />
           </set>
         </option>

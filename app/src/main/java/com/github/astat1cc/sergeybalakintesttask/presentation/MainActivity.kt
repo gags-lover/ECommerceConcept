@@ -22,16 +22,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
 
-        checkIntentForNotificationAction()
+        checkIntentForNotificationAction(intent)
     }
 
-    private fun checkIntentForNotificationAction() {
+    private fun checkIntentForNotificationAction(intent: Intent?) {
+        Log.e("dinar", "checking Intent")
         intent?.let {
-            val action = it.extras?.get(FIREBASE_NOTIFICATION_ACTION_KEY)
+            val action = it.extras?.getString(FIREBASE_NOTIFICATION_ACTION_KEY)
+            Log.e("dinar", "$action")
             if (action == FIREBASE_ACTION_OPEN_CART) {
                 navHostFragment.findNavController().navigate(AppRoutes.CartScreen.Entry)
             }
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
+        Log.e("dinar", "onNewIntent")
+        checkIntentForNotificationAction(intent)
         navHostFragment.findNavController().handleDeepLink(intent)
     }
 }

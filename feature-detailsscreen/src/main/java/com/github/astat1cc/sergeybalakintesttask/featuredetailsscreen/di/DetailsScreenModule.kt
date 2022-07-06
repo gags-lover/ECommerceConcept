@@ -4,7 +4,7 @@ import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.data.remot
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.data.repository.DetailsScreenRepositoryImpl
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.domain.repository.DetailsScreenRepository
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.domain.usecases.GetProductDetailsUseCase
-import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.viewmodel.DetailsViewModel
+import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.presentation.fragments.details.viewmodel.DetailsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

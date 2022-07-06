@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.map.MapFragment">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/findMeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/find_me"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_orange_shape"
+        android:layout_gravity="bottom|end"
+        android:textColor="@color/white"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="12dp"
+        android:textSize="20sp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        app:drawableLeftCompat="@drawable/ic_find_me" />
+
+</FrameLayout>
