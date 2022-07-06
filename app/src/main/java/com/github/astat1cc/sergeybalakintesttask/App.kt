@@ -7,6 +7,7 @@ import com.github.astat1cc.sergeybalakintesttask.di.networkModule
 import com.github.astat1cc.sergeybalakintesttask.featurecartscreen.di.cartScreenModule
 import com.github.astat1cc.sergeybalakintesttask.featuredetailsscreen.di.detailsScreenModule
 import com.github.astat1cc.sergeybalakintesttask.featuremainscreen.di.mainScreenModule
+import com.github.astat1cc.sergeybalakintesttask.featuremap.di.mapModule
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import org.koin.android.ext.koin.androidContext
@@ -27,7 +28,8 @@ class App : Application() {
                 mainScreenModule,
                 cartScreenModule,
                 detailsScreenModule,
-                databaseModule
+                databaseModule,
+                mapModule
             )
         }
     }

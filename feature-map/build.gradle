@@ -45,4 +45,8 @@ dependencies {
     def gms_location_version = "20.0.0"
     implementation "com.google.android.gms:play-services-maps:$gms_map_version"
     implementation "com.google.android.gms:play-services-location:$gms_location_version"
+
+    def koin_version= "3.2.0"
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
 }

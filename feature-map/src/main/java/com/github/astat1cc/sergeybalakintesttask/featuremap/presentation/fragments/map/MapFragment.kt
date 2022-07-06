@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.github.astat1cc.sergeybalakintesttask.featuremap.databinding.FragmentMapBinding
+import com.github.astat1cc.sergeybalakintesttask.featuremap.presentation.fragments.map.viewmodel.MapViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 import kotlin.math.cos
 import kotlin.math.sin
@@ -35,9 +37,11 @@ class MapFragment : Fragment() {
 
     private lateinit var binding: FragmentMapBinding
 
-    private lateinit var googleMap: GoogleMap
+    private var googleMap: GoogleMap? = null
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var userPositionMarker: Marker? = null
+
+    private val viewModel by viewModel<MapViewModel>()
 
     private val requestLocationPermissionsLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -72,9 +76,16 @@ class MapFragment : Fragment() {
         binding.mapView.getMapAsync {
             googleMap = it
             setMapPins()
+            observe()
         }
 
         binding.findMeTextView.setOnClickListener { requestLocationPermissions() }
+    }
+
+    private fun observe() {
+        viewModel.userPosition.observe(viewLifecycleOwner) {
+            addUserPositionMarker(it)
+        }
     }
 
     private fun setMapPins() {
@@ -84,7 +95,7 @@ class MapFragment : Fragment() {
             val markerOptions  = MarkerOptions().position(position).title("Random pin").icon(
                 BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
             )
-            googleMap.addMarker(markerOptions)
+            googleMap?.addMarker(markerOptions)
         }
     }
 
@@ -127,13 +138,17 @@ class MapFragment : Fragment() {
         location?.let {
             userPositionMarker?.remove()
             val position = LatLng(location.latitude, location.longitude)
+            viewModel.setUserPosition(position)
             val cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, MAP_CAMERA_ZOOM)
-            val markerOptions = MarkerOptions().position(position).title("Your position").icon(
-                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
-            )
-            userPositionMarker = googleMap.addMarker(markerOptions)
-            googleMap.animateCamera(cameraUpdate)
+            googleMap?.animateCamera(cameraUpdate)
         }
+    }
+
+    private fun addUserPositionMarker(position: LatLng) {
+        val markerOptions = MarkerOptions().position(position).title("Your position").icon(
+            BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
+        )
+        userPositionMarker = googleMap?.addMarker(markerOptions)
     }
 
     private fun requestLocationPermissions() {
