@@ -23,6 +23,7 @@
         android:paddingVertical="8dp"
         android:paddingHorizontal="12dp"
         android:textSize="20sp"
+        android:drawablePadding="4dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
         app:drawableLeftCompat="@drawable/ic_find_me" />
