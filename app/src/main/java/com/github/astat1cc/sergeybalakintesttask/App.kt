@@ -30,15 +30,5 @@ class App : Application() {
                 databaseModule
             )
         }
-
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            if (!task.isSuccessful) {
-                Log.w("dinar", "Fetching FCM registration token failed", task.exception)
-                return@OnCompleteListener
-            }
-
-            val token = task.result
-            Log.d("dinar", token)
-        })
     }
 }

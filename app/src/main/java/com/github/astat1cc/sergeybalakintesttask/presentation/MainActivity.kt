@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.github.astat1cc.sergeybalakintesttask.R
 import com.github.astat1cc.sergeybalakintesttask.databinding.ActivityMainBinding
 import com.github.astat1cc.sergeybalakintesttask.navigation.AppRoutes
+import com.github.astat1cc.sergeybalakintesttask.navigation.R.id.cartFragment
 import com.github.astat1cc.sergeybalakintesttask.notification.FIREBASE_ACTION_OPEN_CART
 import com.github.astat1cc.sergeybalakintesttask.notification.FIREBASE_NOTIFICATION_ACTION_KEY
 
@@ -29,19 +30,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkIntentForNotificationAction(intent: Intent?) {
-        Log.e("dinar", "checking Intent")
         intent?.let {
             val action = it.extras?.getString(FIREBASE_NOTIFICATION_ACTION_KEY)
-            Log.e("dinar", "$action")
             if (action == FIREBASE_ACTION_OPEN_CART) {
-                navHostFragment.findNavController().navigate(AppRoutes.CartScreen.Entry)
+                if (navHostFragment.findNavController().currentDestination?.id != cartFragment) {
+                    navHostFragment.findNavController().navigate(AppRoutes.CartScreen.Entry)
+                }
             }
         }
     }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        Log.e("dinar", "onNewIntent")
         checkIntentForNotificationAction(intent)
         navHostFragment.findNavController().handleDeepLink(intent)
     }
