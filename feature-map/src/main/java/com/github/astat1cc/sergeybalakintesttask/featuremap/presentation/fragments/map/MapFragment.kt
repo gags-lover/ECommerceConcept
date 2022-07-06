@@ -202,7 +202,7 @@ class MapFragment : Fragment() {
 
     companion object {
 
-        private const val MAP_CAMERA_ZOOM = 18f
+        private const val MAP_CAMERA_ZOOM = 15f
 
         private val LOCATION_PERMISSIONS = arrayOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
