@@ -1,15 +1,6 @@
 ## Ecommerce concept
 
 
-## Дизайн 
-
-![image](https://user-images.githubusercontent.com/94394251/188326734-7cdeaabe-e59c-4831-a4ed-51e42009a171.png)
-![image](https://user-images.githubusercontent.com/94394251/188326755-bfd3c15e-6b0c-43b4-a9a4-1758311446a0.png)
-![image](https://user-images.githubusercontent.com/94394251/188326870-e2f16e33-c800-4178-86a6-962d11bf103f.png)
-
-
-https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE
-
 
 ## Использованные технологии
 
@@ -44,3 +35,13 @@ https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE
 Проект зарегистрирован в Firebase и имеет функционал отправки push-уведомлений, по нажатию на которые открывается экран корзины.
 
 Добавлены deeplink'и на каждый экран: mysite.com/home, mysite.com/details, mysite.com/cart
+
+
+## Дизайн 
+
+![image](https://user-images.githubusercontent.com/94394251/188326734-7cdeaabe-e59c-4831-a4ed-51e42009a171.png)
+![image](https://user-images.githubusercontent.com/94394251/188326755-bfd3c15e-6b0c-43b4-a9a4-1758311446a0.png)
+![image](https://user-images.githubusercontent.com/94394251/188326870-e2f16e33-c800-4178-86a6-962d11bf103f.png)
+
+
+https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE
