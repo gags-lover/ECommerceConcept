@@ -36,4 +36,10 @@
 
 ## Дизайн 
 
+![image](https://user-images.githubusercontent.com/94394251/188326734-7cdeaabe-e59c-4831-a4ed-51e42009a171.png)
+![image](https://user-images.githubusercontent.com/94394251/188326755-bfd3c15e-6b0c-43b4-a9a4-1758311446a0.png)
+![image](https://user-images.githubusercontent.com/94394251/188326763-fd3b3eb0-e228-488d-bdd9-7c3111d74c17.png)
+
+
+
 https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE
